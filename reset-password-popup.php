@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Reset Password Popup
+Plugin Name: Business Blueprint ResetPass Popup
 Plugin URI: http://www.julycabigas.com
 Description:  A plugin that allows user to reset their passwords
 Version: 1.6.2
