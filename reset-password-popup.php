@@ -75,9 +75,9 @@ function rpp_popup_shortcode() {
 
 	   require_once RPP_PATH . 'templates/template-popup.php';
 
-	   $content = ob_get_clean();
-	   
-	   return $content;
+      $output_string = ob_get_contents();
+      if( ob_get_contents() ) ob_end_clean();
+      return $output_string;
 	
     }
    	
@@ -95,7 +95,12 @@ function rpp_get_userId() {
 
 function rpp_is_visible() {
 
+
 	$id = rpp_get_userId();
+
+	if(!$id) {
+		return false;
+	}
 
 	$hide_pass 		 = get_user_meta( $id, 'hide_reset_password_popup', true );
 	$user  		     = get_userdata($id);
